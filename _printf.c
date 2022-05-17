@@ -45,11 +45,7 @@ int _printf(const char *format, ...)
 						break;
 					case ('s'):
 						strg = va_arg(arr, char *);
-						while (*strg)
-						{
-							_putchar(*strg);
-							strg++;
-						}
+						p_str(strg);
 						format++;
 						break;
 					case ('c'):
