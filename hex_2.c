@@ -1,10 +1,7 @@
 #include "main.h"
 /**
- * print_unsign - print_unsign
- * @arg: va_list parameter
- * @base: base 10, 8, 16 etc..
- * Description: print numbers without signed
- * Return: num of characters
+ * hex_2 - a function that prints hexadecimal
+ * @n: the decimal number to be printed as hexadecimal
  */
 
 void hex_2(unsigned int n)

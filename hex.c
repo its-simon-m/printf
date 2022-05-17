@@ -1,10 +1,7 @@
 #include "main.h"
 /**
- * print_unsign - print_unsign
- * @arg: va_list parameter
- * @base: base 10, 8, 16 etc..
- * Description: print numbers without signed
- * Return: num of characters
+ * hex - print_unsign
+ * @n: the number to be converted
  */
 
 void hex(unsigned int n)
