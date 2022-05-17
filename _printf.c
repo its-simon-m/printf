@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 						break;
 					case ('c'):
 						kar = va_arg(arr, int);
-						_putchar(kar);
+						pr_char(kar);
 						format++;
 						break;
 					case ('%'):

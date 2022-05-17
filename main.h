@@ -9,4 +9,5 @@ void unsi(unsigned int n);
 void octa(unsigned int n);
 void hex_2(unsigned int n);
 int p_str(char *s);
+int pr_char(char s);
 #endif
