@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- *Description: this function converts and prints decimals
- *decimal
- *return: number
-*/
+ * deci - a fuction that prints a decimal number
+ * @n: the number to be printed
+ */
 void deci(int n)
 {
 	int arr[64], i = 0;
+
 	if (n < 0)
 	{
 		_putchar('-');

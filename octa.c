@@ -1,9 +1,7 @@
 #include "main.h"
 /**
- *convert_to - convert numbers
- *Description: This function convert numbers to other formats
- *decimal, octal, hexadecimal, binary etc..
- *Return number into char pointer
+ * octa - a function that prints octa-decimal number
+ * @n: the decimal number to be printed as an octa
  */
 
 void octa(unsigned int n)
