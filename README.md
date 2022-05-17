@@ -1,1 +1,1 @@
-This is a read me file for the printf function project
+This Project is a team of two project (Team: Natnael Belay, Simon Michael).
