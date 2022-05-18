@@ -2,93 +2,36 @@
 /**
  * _printf - a function that prints stirngs
  * @format: the format of the string
- * return: 0
+ * Return: teh number of printed characters
  */
 
 int _printf(const char *format, ...)
 {
+	va_list arr;
+	int intg = 0, count = 0;
+
 	if (*format)
 	{
-		int intg;
-		char *strg;
-		char kar;
-		va_list arr;
-		va_start (arr, format);
+		va_start(arr, format);
 		while (*format)
 		{
 			if (*format == '%')
 			{
 				format++;
-				switch (*format)
-				{
-					case ('d'):
-						intg = va_arg(arr, int);
-						if (intg == 0)
-						{
-							_putchar('0');
-							format++;
-							break;
-						}
-						deci(intg);
-						format++;
-						break;
-					case ('i'):
-						intg = va_arg(arr, int);
-						if (intg == 0)
-						{
-							_putchar('0');
-							format++;
-							break;
-						}
-						deci(intg);
-						format++;
-						break;
-					case ('s'):
-						strg = va_arg(arr, char *);
-						p_str(strg);
-						format++;
-						break;
-					case ('c'):
-						kar = va_arg(arr, int);
-						pr_char(kar);
-						format++;
-						break;
-					case ('%'):
-						_putchar('%');
-						format++;
-						break;
-					case ('x'):
-						intg = va_arg(arr, int);
-						hex(intg);
-						format++;
-						break;
-					case ('u'):
-						intg = va_arg(arr, int);
-						unsi(intg);
-						format++;
-						break;
-					case ('o'):
-						intg = va_arg(arr, int);
-						octa(intg);
-						format++;
-						break;
-					case ('X'):
-						intg = va_arg(arr, int);
-						hex_2(intg);
-						format++;
-						break;
-					default:
-						_putchar('%');
-				}
+				intg = switcher(*format, arr);
+				if (intg != -1)
+					format++;
+
 			}
 			else
 			{
 				_putchar(*format);
 				format++;
+				count++;
 			}
 		}
 		va_end(arr);
-		return (0);
+		return (count + intg);
 	}
 	return (-1);
 }

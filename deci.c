@@ -1,12 +1,19 @@
 #include "main.h"
 /**
- * deci - a fuction that prints a decimal number
- * @n: the number to be printed
+ * deci - a function that prints decimal numbers
+ * @arr: the list of arguments
+ * Return: the number of printed characters up on success
  */
-void deci(int n)
+int deci(va_list arr)
 {
-	int arr[64], i = 0;
+	int arg[64], i = 0, n, count = 0;
 
+	n = va_arg(arr, int);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (count);
+	}
 	if (n < 0)
 	{
 		_putchar('-');
@@ -14,14 +21,16 @@ void deci(int n)
 	}
 	while (n)
 	{
-		arr[i] = n % 10;
+		arg[i] = n % 10;
 		n = n / 10;
 		i++;
 	}
 	i--;
 	while (i >= 0)
 	{
-		_putchar('0' + arr[i]);
+		_putchar('0' + arg[i]);
 		i--;
+		count++;
 	}
+	return (count);
 }

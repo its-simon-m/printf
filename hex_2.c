@@ -1,46 +1,38 @@
 #include "main.h"
 /**
- * hex_2 - a function that prints hexadecimal
- * @n: the decimal number to be printed as hexadecimal
+ * hex_2 - a fuction that prints in hexadecimal with upper case letters
+ * @arr: the list of arguments
+ * Return: the number of printed charactres upon success
  */
-
-void hex_2(unsigned int n)
+int hex_2(va_list arr)
 {
-	int arr[64], i = 0;
+	unsigned int n = va_arg(arr, unsigned int);
+	int arg[64], i = 0, count = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (count);
+	}
 	while (n)
 	{
-		arr[i] = n % 16;
+		arg[i] = n % 16;
 		n = n / 16;
 		i++;
 	}
 	i--;
 	while (i >= 0)
 	{
-		switch (arr[i])
+		if (arg[i] > 9)
 		{
-			case (10):
-				_putchar('A');
-				break;
-			case (11):
-				_putchar('B');
-				break;
-			case (12):
-				_putchar('C');
-				break;
-			case (13):
-				_putchar('D');
-				break;
-			case (14):
-				_putchar('E');
-				break;
-			case (15):
-				_putchar('F');
-				break;
-			default:
-				_putchar('0' + arr[i]);
-				break;
+			_putchar('0' + arg[i] + 7);
+		}
+		else
+		{
+			_putchar('0' + arg[i]);
 		}
 		i--;
+		count++;
 	}
+	return (count);
 }

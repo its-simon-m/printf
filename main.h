@@ -3,11 +3,12 @@
 #include <stdarg.h>
 int _printf(const char *format, ...);
 int _putchar(char a);
-void hex(unsigned int n);
-void deci(int n);
-void unsi(unsigned int n);
-void octa(unsigned int n);
-void hex_2(unsigned int n);
-int p_str(char *s);
-int pr_char(char s);
+int hex(va_list arr);
+int deci(va_list arr);
+int unsi(va_list arr);
+int octa(va_list arr);
+int hex_2(va_list arr);
+int p_str(va_list arr);
+int pr_char(va_list arr);
+int switcher(char c, va_list arr);
 #endif

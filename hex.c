@@ -1,46 +1,33 @@
 #include "main.h"
 /**
- * hex - print_unsign
- * @n: the number to be converted
+ * hex - a function that prints hexadecimal
+ * @arr: a list of arguments
+ * Return: the number of printed characters up on success
  */
-
-void hex(unsigned int n)
+int hex(va_list arr)
 {
-	int arr[64], i = 0;
+	unsigned int n = va_arg(arr, unsigned int);
+	int arg[64], i = 0, count = 0;
 
 	while (n)
 	{
-		arr[i] = n % 16;
+		arg[i] = n % 16;
 		n = n / 16;
 		i++;
 	}
 	i--;
 	while (i >= 0)
 	{
-		switch (arr[i])
+		if (arg[i] > 9)
 		{
-			case (10):
-				_putchar('a');
-				break;
-			case (11):
-				_putchar('b');
-				break;
-			case (12):
-				_putchar('c');
-				break;
-			case (13):
-				_putchar('d');
-				break;
-			case (14):
-				_putchar('e');
-				break;
-			case (15):
-				_putchar('f');
-				break;
-			default:
-				_putchar('0' + arr[i]);
-				break;
+			_putchar('0' + arg[i] + 39);
+		}
+		else
+		{
+			_putchar('0' + arg[i]);
 		}
 		i--;
+		count++;
 	}
+	return (count);
 }
